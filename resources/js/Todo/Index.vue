@@ -19,10 +19,10 @@
                 <td>{{ row.description }}</td>
                 <td>{{ row.status }}</td>
                 <td>
-                    <button @click="editRow(row)" class="btn btn-primary">Edit</button>                  
+                    <button @click="editRow(row)" type="button"  class="btn btn-outline-warning">Edit</button>                  
                 </td>
                 <td>                
-                    <button @click="deleteRow(row)" class="btn btn-danger">Del</button>
+                    <button @click="deleteRow(row)" type="button" class="btn btn-outline-danger">Delete</button>
                 </td>
             </tr>
         </table>

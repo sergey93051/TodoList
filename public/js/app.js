@@ -2234,20 +2234,26 @@ var render = function render() {
     staticClass: "table table-bordered table-condensed"
   }, [_vm._m(0), _vm._v(" "), _vm._l(_vm.data, function (row) {
     return _c("tr", [_c("td", [_vm._v(_vm._s(row.name))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(row.description))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(row.status))]), _vm._v(" "), _c("td", [_c("button", {
-      staticClass: "btn btn-primary",
+      staticClass: "btn btn-outline-warning",
+      attrs: {
+        type: "button"
+      },
       on: {
         click: function click($event) {
           return _vm.editRow(row);
         }
       }
     }, [_vm._v("Edit")])]), _vm._v(" "), _c("td", [_c("button", {
-      staticClass: "btn btn-danger",
+      staticClass: "btn btn-outline-danger",
+      attrs: {
+        type: "button"
+      },
       on: {
         click: function click($event) {
           return _vm.deleteRow(row);
         }
       }
-    }, [_vm._v("Del")])])]);
+    }, [_vm._v("Delete")])])]);
   })], 2), _vm._v(" "), _c("div", {
     staticClass: "modal",
     style: _vm.modalShow,
