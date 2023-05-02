@@ -2325,7 +2325,7 @@ var render = function render() {
         _vm.$set(_vm.form, "description", $event.target.value);
       }
     }
-  }, [_vm._v(_vm._s())])]), _vm._v(" "), _c("div", {
+  }, [_vm._v(_vm._s(_vm.form.description))])]), _vm._v(" "), _c("div", {
     staticClass: "form-group"
   }, [_c("label", {
     attrs: {
@@ -2387,7 +2387,7 @@ var render = function render() {
         return _vm.save(_vm.form);
       }
     }
-  }, [_vm._v("Save\n                     ")]) : _vm._e(), _vm._v(" "), _vm.editMode ? _c("button", {
+  }, [_vm._v("Save\n                        ")]) : _vm._e(), _vm._v(" "), _vm.editMode ? _c("button", {
     staticClass: "btn btn-primary",
     attrs: {
       type: "button"
@@ -2397,7 +2397,7 @@ var render = function render() {
         return _vm.updateRow(_vm.form);
       }
     }
-  }, [_vm._v("Update\n                     ")]) : _vm._e()])])])])])]);
+  }, [_vm._v("Update\n                        ")]) : _vm._e()])])])])])]);
 };
 var staticRenderFns = [function () {
   var _vm = this,
