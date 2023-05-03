@@ -30,7 +30,7 @@ class TodoController extends Controller
         }
     }
 
-    public function destroy(Request $request,$id)
+    public function destroy($id)
     {
         if ($id) {
             ModelsTodo::find($id)->delete();

@@ -18,9 +18,8 @@
         "vue-template-compiler": "^2.7.14"
     },
     "dependencies": {
-        "@inertiajs/inertia": "^0.11.1",
+        "@inertiajs/inertia": "^0.7.0",
         "@inertiajs/inertia-vue": "^0.4.2",
-        "bootstrap": "^5.3.0-alpha3",
         "inertia": "^0.0.7",
         "vue": "^2.7.14",
         "vuex": "^3.2.0"

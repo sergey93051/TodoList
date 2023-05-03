@@ -1,43 +1,44 @@
 
+import { Inertia } from '@inertiajs/inertia';
 
 const state = {
-  todos: [],
+   data: [],
 };
 
 const getters = {
-  allTodos: (state) => state.todos,
+    result: (state) => state.todos,
 };
 
 const actions = {  
 
   async create({ commit }, data) {
-    const response = await this.$inertia.post('/store', data);
-    commit('addTodo', response);
+    await Inertia.post('/store', data);
+    commit('create', "success");
   },
 
   async delete({ commit }, id) {
-      await this.$inertia.post(`/api/todos/${id}`);
-    commit('removeTodo', id);
+      await Inertia.post('/delete/' + id,{});
+      commit('delete', "remove success");
   },
 
-  async update({ commit }, todo) {
-    await axios.patch(`/api/todos/${todo.id}`, todo);
-    commit('updateTodo', todo);
+  async update({ commit }, data) {
+     await Inertia.post('/update/' + data.id, data);
+     commit('update', "update Success");
   },
 };
 
 const mutations = {
 
-     addTodo(state, resource) {
-        state.data.push(resource);
+      create(state, response) {
+           state.data.push(response);
       },
 
-      removeTodo(state, resource) {
-        state.data.push(resource);
+      delete(state, response) {
+        state.data.push(response);
       },
       
-      updateTodo(state, resource) {
-        state.data.push(resource);
+      update(state, response) {
+        state.data.push(response);
       },
       
 

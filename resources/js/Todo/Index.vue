@@ -62,10 +62,10 @@
                             <button type="button" class="btn btn-primary" v-if="editMode" @click="updateRow(form)">Update
                             </button>
                         </div>
-                    </div><!-- /.modal-content -->
+                    </div>
 
-                </div><!-- /.modal-dialog -->
-            </div><!-- /.modal -->
+                </div>
+            </div>
         </div>
     </div>
 </template>
@@ -88,9 +88,10 @@ export default {
         }
     },
     computed: {
-        ...mapGetters('todos', ['allTodos']),
+        ...mapGetters(['result']),
     },
     methods: {
+        ...mapActions(['create','update','delete']),
         createModal() {
             this.modalShow = {
                 display: "block"
@@ -100,7 +101,7 @@ export default {
             this.modalShow = {
                 display: 'none'
             },
-                this.reset();
+            this.reset();
             this.editMode = false;
 
         },
@@ -113,7 +114,7 @@ export default {
         },
         async save(data) {
 
-            await this.$inertia.post('/store', data);
+            await this.create(data);
             this.reset();
             this.closeModal();
         },
@@ -123,14 +124,14 @@ export default {
             this.createModal();
         },
         async updateRow(data) {
-            await this.$inertia.post('/update/' + data.id, data)
+            await this.update(data);
             this.reset();
             this.closeModal();
             this.editMode = false;
         },
         async deleteRow(data) {
             if (!confirm('delete this')) return;
-            await this.$inertia.post('/delete/' + data.id, data)
+            await this.delete(data.id);
             this.reset();
             this.closeModal();
         }
